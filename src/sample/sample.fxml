@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="338.0" prefWidth="883.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="444.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+        <Button layoutX="9.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#openFile" prefHeight="25.0" prefWidth="224.0" text="Открыть" />
+        <Button layoutX="244.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="25.0" prefWidth="117.0" text="Сохранить" />
+        <Button layoutX="368.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#saveAs" prefHeight="25.0" prefWidth="102.0" text="Сохранить как" />
+        <TextField fx:id="tfDiagnosis" layoutX="9.0" layoutY="55.0" promptText="Укажите диагноз" />
+        <TextField fx:id="tfMedCardBegin" layoutX="165.0" layoutY="55.0" prefHeight="25.0" prefWidth="70.0" promptText="От" />
+        <TextField fx:id="tfPhone" layoutX="321.0" layoutY="55.0" promptText="Укажите цифру" />
+        <Button layoutX="9.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#sortByDiagnosis" prefHeight="25.0" prefWidth="149.0" text="Поиск по диагнозу" />
+        <Button layoutX="165.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#sortByMedCard" prefHeight="25.0" prefWidth="149.0" text="Поиск по мед карте" />
+        <Button layoutX="321.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#sortByPhone" prefHeight="25.0" prefWidth="149.0" text="Поиск по номеру" />
+        <TextField fx:id="tfMedCardEnd" layoutX="244.0" layoutY="55.0" prefHeight="25.0" prefWidth="70.0" promptText="До" />
+        <TableView fx:id="table" editable="true" layoutX="10.0" layoutY="133.0" prefHeight="196.0" prefWidth="864.0">
+            <columns>
+                <TableColumn fx:id="tId" prefWidth="53.0" text="ID" />
+                <TableColumn fx:id="tName" prefWidth="220.0" text="ФИО" />
+                <TableColumn fx:id="tMedCard" prefWidth="118.0" text="Номер мед карты" />
+                <TableColumn fx:id="tDiagnosis" prefWidth="111.0" text="Диагноз" />
+                <TableColumn fx:id="tAddress" prefWidth="247.0" text="Адрес" />
+                <TableColumn fx:id="tPhone" prefWidth="114.0" text="Телефон" />
+            </columns>
+        </TableView>
+        <Button layoutX="662.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#addPatient" prefHeight="25.0" prefWidth="212.0" text="Добавить пациента" />
+        <Button layoutX="482.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#clearFilters" prefHeight="25.0" prefWidth="170.0" text="Очистить фильтры" />
+      <Button layoutX="757.0" layoutY="15.0" mnemonicParsing="false" onAction="#showStatistics" prefHeight="19.0" prefWidth="117.0" text="Статистика" />
+    </children>
+</Pane>

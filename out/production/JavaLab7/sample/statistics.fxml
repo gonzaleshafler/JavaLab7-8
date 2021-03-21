@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="511.0" maxWidth="652.0" minHeight="460.0" minWidth="652.0" prefHeight="511.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StatisticsController">
+   <children>
+      <BarChart fx:id="barChart" legendVisible="false" prefHeight="380.0" prefWidth="652.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Text fx:id="label1" layoutX="26.0" layoutY="393.0" text="Уникальные случаи заражения:" />
+      <TextArea fx:id="textArea" accessibleRole="TEXT" editable="false" layoutX="26.0" layoutY="396.0" prefHeight="101.0" prefWidth="614.0" />
+   </children>
+</AnchorPane>
