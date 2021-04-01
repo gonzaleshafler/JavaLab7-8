@@ -49,12 +49,6 @@ public class Controller {
         );
 
         tMedCard.setCellValueFactory(new PropertyValueFactory<>("medCard"));
-        tMedCard.setCellFactory(TextFieldTableCell.forTableColumn());
-        tMedCard.setOnEditCommit(
-                t -> (t.getTableView().getItems().get(
-                        t.getTablePosition().getRow())
-                ).setMedCard(t.getNewValue())
-        );
 
         tDiagnosis.setCellValueFactory(new PropertyValueFactory<>("diagnosis"));
         tDiagnosis.setCellFactory(TextFieldTableCell.forTableColumn());

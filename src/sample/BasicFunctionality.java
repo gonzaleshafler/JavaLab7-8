@@ -17,7 +17,10 @@ public class BasicFunctionality {
             String s;
             patients = new ArrayList<>();
             while ((s = br.readLine()) != null) {
-                patients.add(new Patient(s));
+                String[] data = s.split(", ");
+                Patient p = new Patient(Integer.parseInt(data[0])," "," "," ",data[4],data[5],data[2],data[3]);
+                p.setName(data[1]);
+                patients.add(p);
             }
             br.close();
         } catch (Exception e) {
@@ -57,7 +60,15 @@ public class BasicFunctionality {
     }
 
     public void addPatient() {
-        Patient p = new Patient(patients.size() + 1);
+
+        Patient p = new Patient(patients.size()+1,
+                "None",
+                " ",
+                " ",
+                "None",
+                "None",
+                 String.valueOf(patients.size()+1),
+                "None");
         patients.add(p);
     }
 

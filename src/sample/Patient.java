@@ -8,9 +8,9 @@ public class Patient {
     private String phone;
     private String medCard;
     private String diagnosis;
-    private String firstName;   // Имя
-    private String middleName;  // Отчество
-    private String lastName;    // Фамилия
+    private String firstName;
+    private String middleName;
+    private String lastName;
 
     public String getFirstName() {
         return firstName;
@@ -50,56 +50,24 @@ public class Patient {
         }
         return -1;
     }
-    Patient(int id, String firstName, String middleName, String lastName, String address) {
-        String[] diagnoses = {"Отравление", "Коронавирус", "Шиза", "Астения"};
-        setId(id);
-        setFirstName(firstName);
-        setMiddleName(middleName);
-        setLastName(lastName);
-        setAddress(address);
-        setPhone("" + (int)(0));
-        setMedCard(String.valueOf(0));
-        setDiagnosis(diagnoses[(int)(Math.random() * 4)]);
-    }
 
     Patient(int id, String firstName, String middleName, String lastName, String address, String phone, String medCard, String diagnosis) {
         this.id = id;
-        setFirstName(firstName);
-        setMiddleName(middleName);
-        setLastName(lastName);
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
         this.address = address;
         this.phone = phone;
         this.medCard = medCard;
         this.diagnosis = diagnosis;
     }
+    Patient()
+    {
 
-    Patient(String s) {
-        String[] data = s.split(", ");
-        setId(Integer.parseInt(data[0]));
-        setName(data[1]);
-        setMedCard(data[2]);
-        setDiagnosis(data[3]);
-        setAddress(data[4]);
-        setPhone(data[5]);
-    }
-
-    Patient(int id) {
-        this.id = id;
-        setFirstName("");
-        setMiddleName("");
-        setLastName("");
-        setMedCard("0");
-        setDiagnosis("Неизвестно");
-        setAddress("Отсутствует");
-        setPhone("000000000");
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getAddress() {
@@ -122,9 +90,6 @@ public class Patient {
         return medCard;
     }
 
-    public void setMedCard(String medCard) {
-        this.medCard = medCard;
-    }
 
     public String getDiagnosis() {
         return diagnosis;
@@ -157,7 +122,7 @@ public class Patient {
     }
     @Override
     public String toString() {
-        return String.join(", ", String.valueOf(getId()), getName(), String.valueOf(getMedCard()), getDiagnosis(), getAddress(), getPhone());
+        return String.join(", ", String.valueOf(id), getName(), String.valueOf(medCard), diagnosis, address, phone);
     }
 
     public static Comparator<Patient> byMedCardValComparator=new Comparator<Patient>() {
